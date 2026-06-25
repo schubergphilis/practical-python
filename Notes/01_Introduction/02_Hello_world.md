@@ -13,17 +13,17 @@ The interpreter is a "console-based" application that normally runs
 from a command shell.
 
 ```bash
-python3
-Python 3.10.12 (main, Mar 22 2024, 16:50:05)
-[Clang 14.0.0 (clang-1400.0.29.202)] on darwin
-Type "help", "copyright", "credits" or "license" for more information.
+uv run --with ptpython ptpython
 >>>
 ```
 
-Expert programmers usually have no problem using the interpreter in
-this way, but it's not so user-friendly for beginners.  You may be using
+We launch the interpreter through **ptpython**, a friendlier interactive
+shell that adds syntax highlighting, autocompletion, and history on top of
+the standard prompt — handy while you're learning.  The plain `python`
+REPL works exactly the same way if you ever need it.  You may also be using
 an environment that provides a different interface to Python.  That's fine,
-but learning how to run Python terminal is still a useful skill to know.
+but learning how to run Python from the terminal is still a useful skill to
+know.
 
 ### Interactive Mode
 

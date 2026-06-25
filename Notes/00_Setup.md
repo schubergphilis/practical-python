@@ -14,10 +14,13 @@ peeking at solution code (see below).
 ## Setup and Python Installation
 
 This course uses **Python 3.10**, installed and managed with
-[uv](https://docs.astral.sh/uv/).  uv is used only to install the
-interpreter and run your code — the course itself still has no
-third-party package dependencies, and there is no dependency on any
-particular operating system, editor, or IDE.
+[uv](https://docs.astral.sh/uv/).  The course *code* imports only the
+standard library — there are no third-party package dependencies to
+install.  The only extra tooling is **uv** (to manage Python) and
+**ptpython** (a nicer interactive shell, used for the interactive
+examples), and uv fetches ptpython on demand, so there is nothing to
+commit or install up front.  There is no dependency on any particular
+operating system, editor, or IDE.
 
 ### Why uv?
 
@@ -59,19 +62,32 @@ bash % uv python install 3.10
 
 ### Running Python
 
-Run the interactive interpreter and your scripts through `uv run`:
+For interactive work, this course uses **ptpython**, a friendlier
+interactive shell with syntax highlighting, autocompletion, multiline
+editing, and history.  Run everything through `uv` from inside the
+`practical-python/` directory so you always get the pinned Python 3.10:
 
 ```
-bash % uv run python            # interactive REPL on Python 3.10
-bash % uv run python pcost.py   # run a script
-bash % uv run python --version  # verify -> Python 3.10.x
+# Interactive REPL (ptpython) — uv fetches ptpython on demand
+bash % uv run --with ptpython ptpython
+
+# Run a script
+bash % uv run python pcost.py
+
+# Verify your Python version
+bash % uv run python --version   # -> Python 3.10.x
 ```
 
-**Important:** Throughout these notes you will see commands written as
-`python` or `python3` (for example, `bash % python3 report.py`).  When
-using uv, prefix them with `uv run` — e.g. `uv run python3 report.py`.
-This guarantees you are always running Python 3.10, regardless of any
-other Python versions installed on your machine.
+If you'd rather type just `ptpython`, you can install it as a standalone
+tool with `uv tool install ptpython`.
+
+**Important:** Throughout these notes you will see interactive sessions at
+the `>>>` prompt and commands written as `python` or `python3`.  When an
+example shows an interactive session, start it with
+`uv run --with ptpython ptpython`; when it shows a script being run (for
+example, `bash % python3 report.py`), use `uv run python report.py`.  This
+guarantees you are always running Python 3.10, regardless of any other
+Python versions installed on your machine.
 
 That said, most of this course involves learning how to write scripts
 and small programs that involve data read from files.  Therefore, you

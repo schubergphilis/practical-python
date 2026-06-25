@@ -40,13 +40,11 @@ In the words of Python's creator:
 Although there are many environments in which you might run Python,
 Python is typically installed on your machine as a program that runs
 from the terminal or command shell. From the terminal, you should be
-able to type `python` like this (with uv, launch it as `uv run python`):
+able to start an interactive session like this (we use **ptpython**, a
+friendlier shell, launched through uv):
 
 ```
-bash $ uv run python
-Python 3.10.12 (main, Mar 22 2024, 16:50:05)
-[Clang 14.0.0 (clang-1400.0.29.202)] on darwin
-Type "help", "copyright", "credits" or "license" for more information.
+bash $ uv run --with ptpython ptpython
 >>> print("hello world")
 hello world
 >>>
@@ -65,7 +63,8 @@ will be able to use it everywhere else.
 
 ### Exercise 1.1: Using Python as a Calculator
 
-On your machine, start Python and use it as a calculator to solve the
+On your machine, start Python (launch the interactive shell with
+`uv run --with ptpython ptpython`) and use it as a calculator to solve the
 following problem.
 
 Lucky Larry bought 75 shares of Google stock at a price of $235.14 per

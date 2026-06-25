@@ -196,9 +196,7 @@ sys.path.append('/project/foo/pyfiles')
 Paths can also be added via environment variables.
 
 ```python
-% env PYTHONPATH=/project/foo/pyfiles python3
-Python 3.10.12 (main, Mar 22 2024, 16:50:05)
-[Clang 14.0.0 (clang-1400.0.29.202)] on darwin
+% env PYTHONPATH=/project/foo/pyfiles uv run --with ptpython ptpython
 >>> import sys
 >>> sys.path
 ['','/project/foo/pyfiles', ...]
@@ -232,10 +230,7 @@ have all your files. We are going to import them.
 Start Python interactive mode.
 
 ```shell
-bash % python3
-Python 3.10.12 (main, Mar 22 2024, 16:50:05)
-[Clang 14.0.0 (clang-1400.0.29.202)] on darwin
-Type "help", "copyright", "credits" or "license" for more information.
+bash % uv run --with ptpython ptpython
 >>>
 ```
 
