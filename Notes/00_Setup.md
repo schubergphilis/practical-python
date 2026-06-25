@@ -13,10 +13,65 @@ peeking at solution code (see below).
 
 ## Setup and Python Installation
 
-You need nothing more than a basic Python 3.10 installation or newer.
-There is no dependency on any particular operating system, editor,
-IDE, or extra Python-related tooling.  There are no third-party
-dependencies.
+This course uses **Python 3.10**, installed and managed with
+[uv](https://docs.astral.sh/uv/).  uv is used only to install the
+interpreter and run your code — the course itself still has no
+third-party package dependencies, and there is no dependency on any
+particular operating system, editor, or IDE.
+
+### Why uv?
+
+uv is the modern, recommended way to access the Python ecosystem.  It is
+a single tool that manages both Python *versions* and *virtual
+environments*, taking the place of the many separate tools you may have
+heard of before — `pipenv`, `poetry`, `pdm`, `virtualenv`,
+`virtualenvwrapper`, `pipx`, and `pip-tools`.  Because uv is written in
+**Rust** rather than Python, it neatly sidesteps the bootstrapping
+chicken-and-egg problem (you don't need an existing Python to install the
+tool that installs Python), and it is **blazingly fast**.  For this
+course we only use its version-management and run features, but the same
+tool scales all the way up to full dependency and project management
+later on.
+
+### Installing uv
+
+See the [official install guide](https://docs.astral.sh/uv/getting-started/installation/)
+for all options.  The quickest route:
+
+```
+# macOS / Linux
+bash % curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+```
+# Windows (PowerShell)
+PS C:\> powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+This repository ships with a `.python-version` file that pins the
+interpreter to 3.10.  Once you have cloned the course (see below) and are
+inside the `practical-python/` directory, uv will automatically use — and
+download if necessary — Python 3.10.  You can also install it explicitly:
+
+```
+bash % uv python install 3.10
+```
+
+### Running Python
+
+Run the interactive interpreter and your scripts through `uv run`:
+
+```
+bash % uv run python            # interactive REPL on Python 3.10
+bash % uv run python pcost.py   # run a script
+bash % uv run python --version  # verify -> Python 3.10.x
+```
+
+**Important:** Throughout these notes you will see commands written as
+`python` or `python3` (for example, `bash % python3 report.py`).  When
+using uv, prefix them with `uv run` — e.g. `uv run python3 report.py`.
+This guarantees you are always running Python 3.10, regardless of any
+other Python versions installed on your machine.
 
 That said, most of this course involves learning how to write scripts
 and small programs that involve data read from files.  Therefore, you

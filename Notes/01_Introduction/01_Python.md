@@ -16,8 +16,9 @@ Python was created by Guido van Rossum around 1990 who named it in honor of Mont
 
 ### Where to get Python?
 
-[Python.org](https://www.python.org/) is where you obtain Python.  For the purposes of this course, you
-only need a basic installation.  I recommend installing Python 3.10 or newer. Python 3.10 is used in the notes
+This course uses **Python 3.10**, installed and managed with
+[uv](https://docs.astral.sh/uv/).  See [Course Setup](../00_Setup.md)
+for installation instructions.  Python 3.10 is used in the notes
 and solutions.
 
 ### Why was Python created?
@@ -39,10 +40,10 @@ In the words of Python's creator:
 Although there are many environments in which you might run Python,
 Python is typically installed on your machine as a program that runs
 from the terminal or command shell. From the terminal, you should be
-able to type `python` like this:
+able to type `python` like this (with uv, launch it as `uv run python`):
 
 ```
-bash $ python
+bash $ uv run python
 Python 3.10.12 (main, Mar 22 2024, 16:50:05)
 [Clang 14.0.0 (clang-1400.0.29.202)] on darwin
 Type "help", "copyright", "credits" or "license" for more information.
@@ -186,8 +187,8 @@ at all.
 
 If the first import statement `import urllib.request` fails, you're
 probably running an old version of Python. For this course, you need to
-make sure you're using Python 3.10 or newer. Go to
-<https://www.python.org> to download it if you need it.
+make sure you're using Python 3.10 or newer. See
+[Course Setup](../00_Setup.md) for how to install it with uv if you need it.
 
 If your work environment requires the use of an HTTP proxy server, you may need
 to set the `HTTP_PROXY` environment variable to make this part of the
