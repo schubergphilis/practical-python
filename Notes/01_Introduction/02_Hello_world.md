@@ -14,8 +14,8 @@ from a command shell.
 
 ```bash
 python3
-Python 3.6.1 (v3.6.1:69c0db5050, Mar 21 2017, 01:21:04)
-[GCC 4.2.1 (Apple Inc. build 5666) (dot 3)] on darwin
+Python 3.10.12 (main, Mar 22 2024, 16:50:05)
+[Clang 14.0.0 (clang-1400.0.29.202)] on darwin
 Type "help", "copyright", "credits" or "license" for more information.
 >>>
 ```

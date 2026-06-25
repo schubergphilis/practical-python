@@ -112,12 +112,6 @@ class MyStock(Stock):
 
 Use `super()` to call the previous version.
 
-*Caution: In Python 2, the syntax was more verbose.*
-
-```python
-actual_cost = super(MyStock, self).cost()
-```
-
 ### `__init__` and inheritance
 
 If `__init__` is redefined, it is essential to initialize the parent.
@@ -207,9 +201,9 @@ class Shape(object):
 
 `object` is the parent of all objects in Python.
 
-*Note: it's not technically required, but you often see it specified
-as a hold-over from it's required use in Python 2. If omitted, the
-class still implicitly inherits from `object`.
+*Note: specifying `object` is optional. If omitted, the class still
+implicitly inherits from `object`; you mainly see it written out
+explicitly in older code.*
 
 ### Multiple Inheritance
 
@@ -289,13 +283,13 @@ class TableFormatter:
         '''
         Emit the table headings.
         '''
-	raise NotImplementedError()
+        raise NotImplementedError()
 
     def row(self, rowdata):
         '''
         Emit a single row of table data.
         '''
-	raise NotImplementedError()
+        raise NotImplementedError()
 ```
 
 This class does nothing, but it serves as a kind of design specification for

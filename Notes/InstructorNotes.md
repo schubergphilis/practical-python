@@ -12,6 +12,13 @@ These instructions were given to people teaching the course in
 a typical three-day corporate training environment.  They might
 give you some insight about teaching your own course.
 
+*Maintenance note:* The "Where is My Bus?" teaser in Section 1.1 calls a
+live, undocumented endpoint of the Thessaloniki public-transport service
+(`oseth.com.gr`).  Live third-party services change without notice, so this
+example may stop working some day — exactly what happened to the original
+Chicago CTA bus example it replaced.  It is intentionally isolated and
+nothing else in the course depends on it; if it breaks, just skip it.
+
 ## Target Audience and General Approach
 
 This course is intended to be an “Introduction to Python” course for

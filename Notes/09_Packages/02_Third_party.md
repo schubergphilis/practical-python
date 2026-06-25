@@ -29,13 +29,13 @@ directories, you will get an `ImportError` exception.
 ### Standard Library Modules
 
 Modules from Python's standard library usually come from a location
-such as `/usr/local/lib/python3.6'.  You can find out for certain
+such as `/usr/local/lib/python3.10'.  You can find out for certain
 by trying a short test:
 
 ```python
 >>> import re
 >>> re
-<module 're' from '/usr/local/lib/python3.6/re.py'>
+<module 're' from '/usr/local/lib/python3.10/re.py'>
 >>>
 ```
 
@@ -51,7 +51,7 @@ the same steps as above:
 ```python
 >>> import numpy
 >>> numpy
-<module 'numpy' from '/usr/local/lib/python3.6/site-packages/numpy/__init__.py'>
+<module 'numpy' from '/usr/local/lib/python3.10/site-packages/numpy/__init__.py'>
 >>>
 ```
 

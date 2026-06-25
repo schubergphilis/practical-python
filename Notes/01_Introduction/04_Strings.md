@@ -249,7 +249,7 @@ A string with formatted expression substitution.
 >>>
 ```
 
-**Note: This requires Python 3.6 or newer.**  The meaning of the format codes
+The meaning of the format codes
 is covered later.
 
 ## Exercises

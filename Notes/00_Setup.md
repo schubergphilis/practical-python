@@ -13,7 +13,7 @@ peeking at solution code (see below).
 
 ## Setup and Python Installation
 
-You need nothing more than a basic Python 3.6 installation or newer.
+You need nothing more than a basic Python 3.10 installation or newer.
 There is no dependency on any particular operating system, editor,
 IDE, or extra Python-related tooling.  There are no third-party
 dependencies.
@@ -37,7 +37,7 @@ of working environment in notebooks.
 
 To prepare your environment for the course, I recommend creating your
 own fork of the course GitHub repo at
-[https://github.com/dabeaz-course/practical-python](https://github.com/dabeaz-course/practical-python).
+[https://github.com/schubergphilis/practical-python](https://github.com/schubergphilis/practical-python).
 Once you are done, you can clone it to your local machine:
 
 ```
@@ -55,7 +55,7 @@ If you don't want to create a personal fork or don't have a GitHub account,
 you can still clone the course directory to your machine:
 
 ```
-bash % git clone https://github.com/dabeaz-course/practical-python
+bash % git clone https://github.com/schubergphilis/practical-python
 bash % cd practical-python
 bash %
 ```

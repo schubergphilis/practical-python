@@ -19,7 +19,7 @@ often want to produce structured output (tables, etc.). For example:
 
 ### String Formatting
 
-One way to format string in Python 3.6+ is with `f-strings`.
+One way to format a string is with `f-strings`.
 
 ```python
 >>> name = 'IBM'

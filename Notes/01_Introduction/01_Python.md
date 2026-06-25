@@ -4,7 +4,10 @@
 
 ### What is Python?
 
-Python is an interpreted high level programming language.  It is often classified as a
+Python is an interpreted, high-level, dynamically and strongly typed,
+garbage-collected, multi-paradigm, general-purpose, object-oriented,
+platform-independent (cross-platform), "batteries-included" language.  It is
+often classified as a
 ["scripting language"](https://en.wikipedia.org/wiki/Scripting_language) and
 is considered similar to languages such as Perl, Tcl, or Ruby.  The syntax
 of Python is loosely inspired by elements of C programming.
@@ -14,7 +17,7 @@ Python was created by Guido van Rossum around 1990 who named it in honor of Mont
 ### Where to get Python?
 
 [Python.org](https://www.python.org/) is where you obtain Python.  For the purposes of this course, you
-only need a basic installation.  I recommend installing Python 3.6 or newer. Python 3.6 is used in the notes
+only need a basic installation.  I recommend installing Python 3.10 or newer. Python 3.10 is used in the notes
 and solutions.
 
 ### Why was Python created?
@@ -40,8 +43,8 @@ able to type `python` like this:
 
 ```
 bash $ python
-Python 3.8.1 (default, Feb 20 2020, 09:29:22)
-[Clang 10.0.0 (clang-1000.10.44.4)] on darwin
+Python 3.10.12 (main, Mar 22 2024, 16:50:05)
+[Clang 14.0.0 (clang-1400.0.29.202)] on darwin
 Type "help", "copyright", "credits" or "license" for more information.
 >>> print("hello world")
 hello world
@@ -145,43 +148,46 @@ the class by typing in code slowly and thinking about it--not cut and pasting.
 
 ### Exercise 1.4: Where is My Bus?
 
-Note: This was a whimsical example that was a real crowd-pleaser when
-I taught this course in my office.  You could query the bus and then
-literally watch it pass by the window out front.  Sadly, APIs rarely live
-forever and it seems that this one has now ridden off into the sunset. --Dave
-
-Try something more advanced and type these statements to find out how
-long people waiting on the corner of Clark street and Balmoral in
-Chicago will have to wait for the next northbound CTA \#22 bus:
+Try something more advanced and type these statements to find out when
+the next buses are due to arrive at Plateia Aristotelous (Aristotelous
+Square), one of the busiest stops in central Thessaloniki.  The data
+comes straight from the city's live bus-tracking service:
 
 ```python
+>>> import json
+>>> import urllib.parse
 >>> import urllib.request
->>> u = urllib.request.urlopen('http://ctabustracker.com/bustime/map/getStopPredictions.jsp?stop=14791&route=22')
->>> from xml.etree.ElementTree import parse
->>> doc = parse(u)
->>> for pt in doc.findall('.//pt'):
-        print(pt.text)
+>>> from datetime import datetime
+>>> stop = '1045'   # Plateia Aristotelous, Thessaloniki
+>>> date = urllib.parse.quote(datetime.now().strftime('%d/%m/%Y %H:%M:%S'))
+>>> url = f'https://oseth.com.gr/el/telematics-api/stop/{stop}/timetable?date={date}'
+>>> req = urllib.request.Request(url, headers={'Referer': 'https://oseth.com.gr/el'})
+>>> data = json.load(urllib.request.urlopen(req))
+>>> for trip in data['data']['trips'][:5]:
+        print(trip['route']['shortName'], trip['arrivalTime'], trip['headsign'])
 
-6 MIN
-18 MIN
-28 MIN
+83B 12:56:56 ΘΕΣ/ΝΙΚΗ - ΛΑΓΚΑΔΑΣ
+02K 12:58:00 Α.Σ.ΙΚΕΑ-Κ.Τ.Ε.Λ ΜΑΚΕΔΟΝΙΑ
+27 13:00:36 ΠΑΝΕΠΙΣΤΗΜΙΟ - ΣΤΑΥΡΟΥΠΟΛΗ
+39 13:00:44 ΚΗΦΙΣΙΑ - ΔΙΚΑΣΤΗΡΙΑ
+50 13:02:11 ΠΟΛΙΤΙΣΤΙΚΗ ΓΡΑΜΜΗ
 >>>
 ```
 
-Yes, you just downloaded a web page, parsed an XML document, and
-extracted some useful information in about 6 lines of code. The data
-you accessed is actually feeding the website
-<http://ctabustracker.com/bustime/home.jsp>. Try it again and watch
-the predictions change.
+Yes, you just downloaded a web page, parsed a JSON document, and
+extracted some useful information in about a half-dozen lines of code.
+The data you accessed is the same feed that powers the live map at
+<https://oseth.com.gr>. Try it again in a few minutes and watch the
+arrival times change.
 
-Note: This service only reports arrival times within the next 30 minutes.
-If you're in a different timezone and it happens to be 3am in Chicago, you
-might not get any output.  You use the tracker link above to double check.
+Note: This is live data, so the buses you see depend on the time of
+day. Late at night you may see only a few upcoming arrivals, or none
+at all.
 
-If the first import statement `import urllib.request` fails, you’re
-probably using Python 2. For this course, you need to make sure you’re
-using Python 3.6 or newer. Go to <https://www.python.org> to download
-it if you need it.
+If the first import statement `import urllib.request` fails, you're
+probably running an old version of Python. For this course, you need to
+make sure you're using Python 3.10 or newer. Go to
+<https://www.python.org> to download it if you need it.
 
 If your work environment requires the use of an HTTP proxy server, you may need
 to set the `HTTP_PROXY` environment variable to make this part of the
@@ -194,7 +200,7 @@ exercise work. For example:
 ```
 
 If you can't make this work, don't worry about it.  The rest of this course
-has nothing to do with parsing XML.
+has nothing to do with downloading data from the web.
 
 [Contents](../Contents.md) \| [Next (1.2 A First Program)](02_Hello_world.md)
 

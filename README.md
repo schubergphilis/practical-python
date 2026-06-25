@@ -10,7 +10,7 @@ tinkerers, and even a few hundred rocket scientists who used Python to
 help land a rover on Mars--they've all taken this course. Now, I'm
 pleased to make it available under a Creative Commons license. Enjoy!
 
-[GitHub Pages](https://dabeaz-course.github.io/practical-python) | [GitHub Repo](https://github.com/dabeaz-course/practical-python).
+[GitHub Pages](https://schubergphilis.github.io/practical-python) | [GitHub Repo](https://github.com/schubergphilis/practical-python).
 
 --David Beazley ([https://dabeaz.com](https://dabeaz.com)), [@dabeaz](https://twitter.com/dabeaz)
 
@@ -45,7 +45,7 @@ coworkers.
 ## Requirements
 
 To complete this course, you need nothing more than a basic
-installation of Python 3.6 or newer and time to work on it.
+installation of Python 3.10 or newer and time to work on it.
 
 ## What This Course is Not
 
@@ -71,8 +71,8 @@ Ok, ok. Point your browser [HERE](Notes/Contents.md)!
 
 ## Community Discussion
 
-Want to discuss the course?  You can join the conversation on
-[Gitter](https://gitter.im/dabeaz-course/practical-python).  I can't
+Want to discuss the course?  You can open an issue or join the discussion on
+[GitHub](https://github.com/schubergphilis/practical-python/issues).  We can't
 promise an individual response, but perhaps others can jump in to help.
 
 ## Acknowledgements
@@ -139,6 +139,6 @@ will occasionally fix bugs and add clarification.
 ### Q: Do you accept pull requests?
 
 Bug reports are appreciated and may be filed through the
-[issue tracker](https://github.com/dabeaz-course/practical-python/issues).
+[issue tracker](https://github.com/schubergphilis/practical-python/issues).
 Pull requests are not accepted except by invitation. Please file an issue first.
 
