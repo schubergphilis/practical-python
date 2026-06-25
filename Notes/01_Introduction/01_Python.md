@@ -185,21 +185,6 @@ Note: This is live data, so the buses you see depend on the time of
 day. Late at night you may see only a few upcoming arrivals, or none
 at all.
 
-If the first import statement `import urllib.request` fails, you're
-probably running an old version of Python. For this course, you need to
-make sure you're using Python 3.10 or newer. See
-[Course Setup](../00_Setup.md) for how to install it with uv if you need it.
-
-If your work environment requires the use of an HTTP proxy server, you may need
-to set the `HTTP_PROXY` environment variable to make this part of the
-exercise work. For example:
-
-```python
->>> import os
->>> os.environ['HTTP_PROXY'] = 'http://yourproxy.server.com'
->>>
-```
-
 If you can't make this work, don't worry about it.  The rest of this course
 has nothing to do with downloading data from the web.
 
